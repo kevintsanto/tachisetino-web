@@ -5,6 +5,31 @@ function updateDateTime() {
     document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
 }
 
-// Actualiza la fecha y hora cada segundo
-setInterval(updateDateTime, 1000);
-updateDateTime();
+// Función para obtener la hora de forma mística
+function mysticalTime() {
+    const datetimeElement = document.getElementById("datetime");
+
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    // Aquí podemos usar caracteres místicos, por ejemplo usando círculos o símbolos
+    const mysticSymbols = ['⧫', '✷', '✪', '❂', '❀', '✺', '✧', '☀', '✸'];
+
+    // Convertir los números de la hora en símbolos místicos
+    const mysticHour = mysticSymbols[hours % mysticSymbols.length];
+    const mysticMinute = mysticSymbols[minutes % mysticSymbols.length];
+    const mysticSecond = mysticSymbols[seconds % mysticSymbols.length];
+
+    const timeString = `${mysticHour}${mysticMinute}${mysticSecond}`;
+    datetimeElement.textContent = timeString;
+}
+
+// Actualizar cada segundo
+function smoothMysticalTimeMovement() {
+    mysticalTime();
+    setInterval(mysticalTime, 1000);
+}
+
+smoothMysticalTimeMovement();
