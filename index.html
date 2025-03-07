@@ -7,11 +7,72 @@
     <title>TACHISETINO</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer=""></script>
+    <style>
+        /* Estilos para la advertencia minimalista */
+        .custom-alert {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #1e1e1e;
+            padding: 20px 40px;
+            border-radius: 5px;
+            font-family: 'Perpetua', serif;
+            text-align: center;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .custom-alert h1 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .custom-alert p {
+            margin: 0;
+            font-weight: lighter;
+            font-size: 16px;
+        }
+
+        .custom-alert .close-btn {
+            margin-top: 20px;
+            background-color: #EDDECD;
+            color: #1e1e1e;
+            padding: 8px 16px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .custom-alert .close-btn:hover {
+            background-color: #D4C4B1;
+        }
+    </style>
+    <script>
+        // Función que muestra el mensaje emergente
+        function showMessage() {
+            var alertBox = document.getElementById("customAlert");
+            alertBox.style.display = "block";
+        }
+
+        // Función para cerrar la advertencia
+        function closeAlert() {
+            var alertBox = document.getElementById("customAlert");
+            alertBox.style.display = "none";
+        }
+    </script>
 </head>
 
 <body>
-    <div class="container" style="background-image: url('assets/images/FondosPrincipales/Texturelabs_Wood_278L.jpg');
-background-size: cover;">
+    <div class="container" style="background-image: url('assets/images/FondosPrincipales/Texturelabs_Wood_278L.jpg'); background-size: cover;">
         <!-- Hora y Fecha (Superior Izquierda) -->
         <div id="datetime">Friday, March 7, 2025 at 04:32 AM</div>
 
@@ -21,26 +82,22 @@ background-size: cover;">
         <!-- Menú de enlaces -->
         <nav class="menu">
             <ul>
-                <li><a href="pages/lookbook.html" class="link">première</a></li>
-                <li><a href="pages/shop.html" class="link">shop</a></li>
-                <li><a href="pages/random.html" class="link">random</a></li>
-                <li><a href="pages/about.html" class="link">about TCS</a></li>
-                <li><a href="pages/stores.html" class="link">stores</a></li>
-                <li><a href="pages/contact.html" class="link">contact</a></li>
-                <li><a href="pages/mailing.html" class="link">mailing List</a></li>
+                <li><a href="javascript:void(0);" class="link" onclick="showMessage()">première</a></li>
+                <li><a href="javascript:void(0);" class="link" onclick="showMessage()">shop</a></li>
+                <li><a href="javascript:void(0);" class="link" onclick="showMessage()">random</a></li>
+                <li><a href="javascript:void(0);" class="link" onclick="showMessage()">about TCS</a></li>
+                <li><a href="javascript:void(0);" class="link" onclick="showMessage()">stores</a></li>
+                <li><a href="javascript:void(0);" class="link" onclick="showMessage()">contact</a></li>
+                <li><a href="javascript:void(0);" class="link" onclick="showMessage()">mailing List</a></li>
             </ul>
         </nav>
 
-        <!-- Redes Sociales (Abajo del Todo) -->
-        <!--<footer class="social-links">
-            <a href="#"><img src="assets/images/miniaturas/instagram-50px.png" alt="Instagram"></a>
-            <a href="#"><img src="assets/images/miniaturas/facebook-50px.png" alt="Facebook"></a>
-            <a href="#"><img src="assets/images/miniaturas/pinterest-50px.png" alt="Pinterest"></a>
-            <a href="#"><img src="assets/images/miniaturas/whatsapp-50px.png" alt="Whatsapp"></a>
-            <a href="#"><img src="assets/images/miniaturas/spotify-50px.png" alt="Spotify"></a>
-            <a href="#"><img src="assets/images/miniaturas/telegram-50px.png" alt="Telegram"></a>
-            <a href="#"><img src="assets/images/miniaturas/tiktok-50px.png" alt="Tiktok"></a>
-        </footer>-->
+        <!-- Advertencia minimalista -->
+        <div id="customAlert" class="custom-alert">
+            <h1>TACHISETINO</h1>
+            <p>La sección que estás buscando estará disponible pronto. ¡Gracias por tu paciencia!</p>
+            <button class="close-btn" onclick="closeAlert()">Cerrar</button>
+        </div>
 
     </div>
 
