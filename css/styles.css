@@ -181,3 +181,10 @@ footer.social-links img {
         font-size: 12px;
     }
 }
+
+/* Estilos para ocultar la hora normal en móviles */
+@media (max-width: 767px) {
+    .hora-normal {
+        display: none;
+    }
+}
