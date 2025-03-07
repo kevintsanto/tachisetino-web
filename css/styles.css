@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Perpetua&display=swap');
-
 /* Reset */
 * {
     margin: 0;
@@ -14,7 +12,7 @@ html {
     width: 100%;
     overflow: hidden;
     font-family: 'Perpetua', serif;
-    background-color: #ffffff;
+    background-color: #fafbfd;
     color: #000;
     display: flex;
     justify-content: center;
@@ -31,68 +29,55 @@ html {
     height: 100vh;
     text-align: center;
     position: relative;
-    background-image: url('assets/images/FondosPrincipales/Photocopy measurementsTexturelabs_Details_174XL.jpg');
     background-size: cover;
-    /* Hace que la imagen cubra toda el área */
     background-position: center;
-    /* Centra la imagen */
     background-repeat: no-repeat;
-    /* Evita que la imagen se repita */
+    width: 100%;
+    /* Asegura que la imagen cubra todo el contenedor */
 }
-
 
 /* Hora y Fecha */
 #datetime {
     position: absolute;
     top: 10px;
     left: -100%;
-    /* Comienza fuera de la pantalla a la izquierda */
     font-size: 14px;
     opacity: 0.8;
     width: 100%;
-    /* Asegura que ocupe todo el ancho */
     text-align: center;
-    /* Centra el texto */
     font-family: 'Arial', sans-serif;
-    /* Fuente minimalista */
     white-space: nowrap;
-    /* No permite que el texto se divida */
-    animation: moveDateTime 15s linear infinite;
-    /* Animación que se repite infinitamente */
+    animation: moveDateTime 30s linear infinite;
 }
 
-/* Animación que mueve el elemento de izquierda a derecha */
+/* Animación de la hora */
 @keyframes moveDateTime {
     0% {
         left: -100%;
-        /* Empieza completamente fuera de la pantalla a la izquierda */
     }
 
     50% {
         left: 50%;
-        /* Se posiciona en el medio de la pantalla */
         transform: translateX(-50%);
-        /* Alinea al centro */
     }
 
     100% {
         left: 100%;
-        /* Se mueve fuera de la pantalla a la derecha */
     }
 }
 
-
-/* Logo (doble de grande que el tamaño reducido) */
+/* Logo */
 .logo {
-    max-width: 12vw;
-    /* Doble del tamaño reducido de 6vw */
+    max-width: 7vw;
     width: auto;
     height: auto;
     opacity: 0.8;
-    margin-top: -40px;
-    /* Ajusta para mover el logo hacia arriba */
+    /* Opacidad del 80% */
+    margin-top: -50px;
     margin-bottom: 30px;
     object-fit: contain;
+    transition: opacity 0.5s ease;
+    /* Transición suave */
 }
 
 /* Menú de enlaces */
@@ -120,7 +105,7 @@ html {
 }
 
 .link:hover {
-    color: #555;
+    color: #000000;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -152,7 +137,6 @@ footer.social-links img {
 @media (max-width: 1200px) {
     .logo {
         max-width: 12vw;
-        /* Mantiene el tamaño aumentado */
     }
 
     .link {
@@ -163,7 +147,6 @@ footer.social-links img {
 @media (max-width: 800px) {
     .logo {
         max-width: 12vw;
-        /* Mantiene el tamaño aumentado */
     }
 
     .link {
@@ -174,7 +157,6 @@ footer.social-links img {
 @media (max-width: 600px) {
     .logo {
         max-width: 12vw;
-        /* Mantiene el tamaño aumentado */
     }
 
     .link {
@@ -186,5 +168,14 @@ footer.social-links img {
 @media (max-width: 767px) {
     .hora-normal {
         display: none;
+    }
+}
+
+/* Asegura que la hora mística sea visible y se mueva en pantallas pequeñas */
+@media (max-width: 767px) {
+    #datetime {
+        font-size: 12px;
+        animation: moveDateTime 15s linear infinite;
+        /* Asegura la animación */
     }
 }
