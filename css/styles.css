@@ -68,10 +68,10 @@ html {
 
 /* Logo */
 .logo {
-    max-width: 7vw;
+    max-width: 13vw;
     width: auto;
     height: auto;
-    opacity: 0.8;
+    opacity: 5.0;
     /* Opacidad del 80% */
     margin-top: -50px;
     margin-bottom: 30px;
@@ -98,7 +98,7 @@ html {
 
 .link {
     color: #1e1e1e;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 400;
     text-decoration: none;
     transition: color 0.3s;
