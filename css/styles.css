@@ -1,186 +1,292 @@
 /* Estilos generales */
 body {
     font-family: 'Times New Roman', Times, serif;
+    /* Fuente utilizada en todo el documento */
     margin: 0;
+    /* Elimina márgenes predeterminados */
     display: flex;
+    /* Utiliza Flexbox para la organización */
     flex-direction: column;
+    /* Organiza los elementos en una columna */
     align-items: center;
+    /* Centra los elementos horizontalmente */
     min-height: 100vh;
+    /* Asegura que el cuerpo tenga al menos el 100% de la altura de la ventana */
     color: #333;
+    /* Establece el color del texto */
     overflow-x: hidden;
     /* Oculta el scroll horizontal */
 }
 
 .video-background {
     position: fixed;
+    /* Fija el video en la pantalla */
     top: 0;
+    /* Posiciona el video en la parte superior */
     left: 0;
+    /* Posiciona el video en el lado izquierdo */
     width: 100%;
+    /* Hace que el video ocupe todo el ancho de la pantalla */
     height: 100%;
+    /* Hace que el video ocupe toda la altura de la pantalla */
     object-fit: cover;
+    /* Asegura que el video cubra toda el área disponible sin distorsionarse */
     z-index: -1;
+    /* Envía el video al fondo */
     transition: opacity 0.5s ease;
+    /* Transición suave para cambiar la opacidad */
 }
 
-/* Encabezado */
+/* Eliminar la barra blanca del encabezado */
 .main-header {
-    /* Clase para el encabezado */
     width: 100%;
+    /* Asegura que el encabezado ocupe todo el ancho de la pantalla */
     text-align: center;
+    /* Centra el contenido dentro del encabezado */
     padding: 15px 0;
-    background-color: rgba(255, 255, 255, 0.7);
-    /* Aumenta la transparencia */
-    backdrop-filter: blur(5px);
+    /* Espaciado superior e inferior */
+    background-color: transparent;
+    /* Elimina el fondo blanco */
+    backdrop-filter: none;
+    /* Elimina el filtro de desenfoque en el fondo */
 }
 
 /* Estilos para la hora y fecha */
 .datetime-display {
-    /* Clase para la hora */
     font-size: 18px;
-    color: #444;
+    /* Tamaño de la fuente */
+    color: #000000;
+    /* Color del texto */
     text-transform: uppercase;
+    /* Transforma el texto a mayúsculas */
     letter-spacing: 3px;
+    /* Espaciado entre letras */
     font-weight: 500;
+    /* Grosor de la fuente */
 }
 
 /* Contenedor principal */
 .main-content {
-    /* Clase para el contenedor principal */
     display: flex;
+    /* Utiliza Flexbox para el contenido */
     flex-direction: column;
+    /* Organiza los elementos en una columna */
     align-items: center;
+    /* Centra los elementos horizontalmente */
     padding: 30px;
+    /* Espaciado alrededor del contenido */
     width: 90%;
+    /* Ancho del contenedor (90% del ancho de la pantalla) */
     max-width: 800px;
+    /* Ancho máximo de 800px */
 }
 
 /* Estilos para el logo */
 .main-logo {
-    /* Clase para el logo */
     max-width: 90px;
+    /* El logo no será más ancho de 90px */
     height: auto;
+    /* Mantiene la proporción de la altura del logo */
     margin-bottom: 25px;
+    /* Espaciado debajo del logo */
     transition: transform 0.3s ease;
+    /* Transición suave cuando el logo cambia de tamaño */
 }
 
 /* Estilos para el menú */
 .main-nav ul {
-    /* Clase para el menu */
     list-style: none;
+    /* Elimina los puntos de lista */
     padding: 0;
+    /* Elimina el padding predeterminado */
     margin: 0;
+    /* Elimina el margen predeterminado */
     display: flex;
+    /* Organiza los elementos del menú en fila */
     flex-direction: column;
+    /* Los elementos se organizan en una columna */
     align-items: center;
+    /* Centra los elementos del menú horizontalmente */
 }
 
 .main-nav li {
-    margin: 15px 0;
+    margin: 0.5px 0;
+    /* Espaciado vertical entre los elementos del menú */
 }
 
+/* Estilo para los enlaces del menú */
 .main-nav .nav-link {
-    /* Clase para los links del menu */
+    font-family: 'Times New Roman', Times, serif;
+    /* Fuente utilizada en los enlaces */
     background-color: transparent;
+    /* Fondo transparente */
     border: none;
+    /* Sin bordes */
     font-size: 20px;
-    color: #333;
+    /* Tamaño de la fuente */
+    color: #000000;
+    /* Color del texto */
     cursor: pointer;
+    /* El puntero del mouse cambia a mano al pasar por encima */
     padding: 12px 20px;
-    border-radius: 5px;
-    text-transform: uppercase;
+    /* Espaciado dentro de los botones */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    text-transform: lowercase;
+    /* Texto en mayúsculas */
     letter-spacing: 3px;
+    /* Espaciado entre las letras */
     transition: all 0.3s ease;
+    /* Transición suave para todos los cambios */
     font-weight: 500;
+    /* Grosor de la fuente */
 }
 
+/* Estilo específico para el enlace 'première' */
+.main-nav .premiere-link {
+    text-transform: uppercase;
+    /* Texto en mayúsculas solo para 'première' */
+}
+
+/* Efecto al pasar el cursor sobre los enlaces del menú */
 .main-nav .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    /* Aumenta la transparencia */
+    background-color: rgba(119, 116, 116, 0.079);
+    /* Fondo transparente con un toque de gris */
     transform: scale(1.05);
+    /* Aumenta ligeramente el tamaño del botón */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Agrega una sombra suave al pasar el cursor */
 }
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
     .main-nav ul {
         flex-direction: column;
+        /* Los elementos se organizan en columna en pantallas pequeñas */
     }
 
     .main-nav li {
         margin: 10px 0;
+        /* Reduce el margen entre los elementos */
     }
 
     .main-nav .nav-link {
         font-size: 18px;
+        /* Reduce el tamaño de la fuente en pantallas más pequeñas */
         padding: 10px 15px;
+        /* Ajusta el padding */
     }
 }
 
 @media (max-width: 480px) {
     .main-logo {
         max-width: 70px;
+        /* Reduce el tamaño máximo del logo */
     }
 
     .main-nav .nav-link {
         font-size: 16px;
+        /* Reduce aún más el tamaño de la fuente */
         padding: 8px 12px;
+        /* Ajusta el padding para pantallas muy pequeñas */
     }
 }
 
 /* Estilos para la advertencia */
 .renaissance-alert {
     display: none;
+    /* Inicialmente está oculta */
     position: fixed;
+    /* Fija el elemento en la pantalla */
     top: 50%;
+    /* Centra verticalmente */
     left: 50%;
+    /* Centra horizontalmente */
     transform: translate(-50%, -50%);
+    /* Ajusta la posición para centrar perfectamente */
     background-color: rgba(255, 255, 255, 0.95);
+    /* Fondo blanco con algo de transparencia */
     color: #333;
+    /* Color del texto */
     padding: 40px 60px;
+    /* Espaciado dentro del cuadro de advertencia */
     border-radius: 10px;
+    /* Bordes redondeados */
     font-family: 'Times New Roman', Times, serif;
+    /* Fuente utilizada */
     text-align: center;
+    /* Centra el texto */
     font-size: 20px;
+    /* Tamaño de la fuente */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Sombra suave alrededor del cuadro */
     width: 90%;
+    /* Ancho del cuadro */
     max-width: 600px;
+    /* Ancho máximo del cuadro */
     opacity: 0;
+    /* Inicialmente invisible */
     transition: transform 0.3s ease, opacity 0.3s ease;
+    /* Transición suave */
     backdrop-filter: blur(8px);
+    /* Efecto de desenfoque en el fondo */
     border: 2px solid #ddd;
+    /* Borde suave alrededor del cuadro */
 }
 
 .renaissance-alert.show {
     transform: translate(-50%, -50%) scale(1);
+    /* Muestra el cuadro de advertencia y lo escala */
     opacity: 1;
+    /* Hace visible el cuadro */
 }
 
+/* Estilo del encabezado dentro de la advertencia */
 .renaissance-alert h2 {
     font-size: 28px;
+    /* Tamaño de la fuente */
     margin-bottom: 20px;
+    /* Espaciado debajo del encabezado */
     font-weight: bold;
+    /* Grosor de la fuente */
     text-transform: uppercase;
+    /* Transforma el texto a mayúsculas */
     letter-spacing: 2px;
+    /* Espaciado entre letras */
 }
 
-renaissance-alert p {
+.renaissance-alert p {
     margin: 0 0 30px;
+    /* Espaciado entre el párrafo y el siguiente contenido */
     line-height: 1.8;
+    /* Espaciado entre las líneas */
 }
 
+/* Estilo del botón de cerrar dentro de la advertencia */
 .renaissance-alert .close-btn {
     background-color: #333;
+    /* Fondo oscuro para el botón */
     color: #fff;
+    /* Color blanco para el texto */
     padding: 12px 25px;
+    /* Espaciado dentro del botón */
     font-size: 16px;
+    /* Tamaño de la fuente */
     border: none;
+    /* Sin borde */
     cursor: pointer;
+    /* Puntero de mano al pasar el mouse */
     border-radius: 8px;
+    /* Bordes redondeados */
     text-transform: uppercase;
+    /* Texto en mayúsculas */
     letter-spacing: 2px;
+    /* Espaciado entre letras */
     transition: background-color 0.2s ease;
+    /* Transición suave del color de fondo */
 }
 
 .renaissance-alert .close-btn:hover {
     background-color: #555;
+    /* Cambia el color de fondo al pasar el cursor */
 }
