@@ -15,7 +15,7 @@ function mysticalTime() {
     const seconds = now.getSeconds();
 
     // Aquí podemos usar caracteres místicos, por ejemplo usando círculos o símbolos
-    const mysticSymbols = ['⧫', '✷', '✪', '❂', '❀', '✺', '✧', '☀', '✸'];
+    const mysticSymbols = ['⧫', '✷', '✪', '❂', '❀', '✺', '✧'];
 
     // Convertir los números de la hora en símbolos místicos
     const mysticHour = mysticSymbols[hours % mysticSymbols.length];
